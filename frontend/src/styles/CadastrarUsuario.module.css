@@ -1,0 +1,18 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.containerArea {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+    flex-direction: column;
+    text-align: center;
+}

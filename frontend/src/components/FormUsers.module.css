@@ -1,0 +1,53 @@
+.formContainer {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #fff;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 5px;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    height: 40px;
+    text-transform: capitalize;
+}
+
+.button {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #076633;
+    color: white;
+    height: 42px;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFBF00;
+    color: white;
+    height: 42px;
+    transition: background-color 0.2s ease;
+}
+
+.label {
+    width: 100%;
+    /* Se necessário, adicione estilos para labels aqui */
+}

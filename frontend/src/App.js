@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+// App.js
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import styles from './styles/global.module.css';
+import { toast, ToastContainer } from 'react-toastify'
+import CadastrarUsuario from "./pages/CadastrarUsuario.js";
+ 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.body}>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path='/' element={<CadastrarUsuario />}/>
+
+        </Routes>
+        {/* <ToastContainer autoClose={3000} position={toast.POSITION.TOP_RIGHT} /> */}
+      </BrowserRouter>
     </div>
   );
 }
