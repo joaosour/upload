@@ -12,9 +12,9 @@ export const getUsers = (_, res) => {
 
 export const addUser = (req, res) => {
 
-    const checkUserExist = "SELECT * FROM usuario WHERE usuario = ?";
+    const checkUserExist = "SELECT * FROM usuario WHERE nome = ?";
 
-    db.query(checkUserExist, [req.body.usuario], (err, results) => {
+    db.query(checkUserExist, [req.body.nome], (err, results) => {
         if(err) {
             return res.status(500).json(err);
         }
@@ -23,14 +23,10 @@ export const addUser = (req, res) => {
         }
         else {
             
-            const q = "INSERT INTO usuario(`nome`, `usuario`,`senha`,`email`, `usuario_admin`) VALUES(?)";
+            const q = "INSERT INTO usuario(`nome`) VALUES(?)";
         
             const values = [
                 req.body.nome,
-                req.body.usuario,
-                req.body.senha,
-                req.body.email,
-                req.body.usuario_admin,
             ];
         
             db.query(q, [values], (err) => {
@@ -55,18 +51,10 @@ export const updateUser = (req, res) => {
             return res.status(404).json("Usuário não encontrado");
         }
 
-        // if (results.length > 0) {
-        //     return res.status(409).json("Usuário já existe!");
-        // }
-
         else {
-            const q = "UPDATE usuario SET `nome` = ?, `usuario` = ?,`senha`= ?,`email` = ?, `usuario_admin` = ? WHERE `id` = ?";
+            const q = "UPDATE usuario SET `nome` = ?  WHERE `id` = ?";
             const values = [
                 req.body.nome,
-                req.body.usuario,
-                req.body.senha,
-                req.body.email,
-                req.body.usuario_admin,
                 req.params.id,
             ];
     
