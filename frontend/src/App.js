@@ -14,7 +14,7 @@ function App() {
           <Route path='/' element={<CadastrarUsuario />}/>
 
         </Routes>
-        {/* <ToastContainer autoClose={3000} position={toast.POSITION.TOP_RIGHT} /> */}
+        <ToastContainer autoClose={3000} position={toast.POSITION.TOP_RIGHT} />
       </BrowserRouter>
     </div>
   );
